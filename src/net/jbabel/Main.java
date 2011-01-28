@@ -5,6 +5,9 @@
 
 package net.jbabel;
 
+import net.jbabel.core.DB;
+
+
 /**
  *
  * @author victor
@@ -16,6 +19,10 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+
+        DB.getInstance().getEmConfig().getTransaction().begin();
+        DB.getInstance().getEmConfig().getTransaction().commit();
+        DB.getInstance().close();
     }
 
 }
